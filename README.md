@@ -1,9 +1,21 @@
-# PIAPE-dashboard
-
 # 📊 Dashboard de Acompanhamento de Discentes PcD - PROGES
 
 Este projeto consiste em um **painel interativo desenvolvido com Streamlit** para acompanhamento e análise de **discentes com deficiência (PcD)**, integrando dados de calouros, veteranos e bolsistas.  
 O dashboard foi desenvolvido para auxiliar a **PROGES** na visualização de informações sobre alunos, cursos, campi, desempenho acadêmico e distribuição de recursos.
+
+---
+
+## 🧩 Estrutura do Projeto
+
+```
+📁 dashboard_proges/
+│
+├── 📄 dashboard_proges.py        # Código principal do dashboard
+├── 📄 calouros.csv               # Base de dados de alunos calouros
+├── 📄 veteranos.csv              # Base de dados de alunos veteranos
+├── 📄 bolsistas.csv              # Base de dados de bolsistas ativos
+└── 📄 README.md                  # Documentação do projeto
+```
 
 ---
 
@@ -25,6 +37,112 @@ O dashboard foi desenvolvido para auxiliar a **PROGES** na visualização de inf
 No terminal, execute:
 ```bash
 pip install streamlit pandas numpy plotly
+```
 
+### 2️⃣ Certifique-se de que os arquivos `.csv` estejam na mesma pasta do script:
 
+- `calouros.csv`
+- `veteranos.csv`
+- `bolsistas.csv`
 
+### 3️⃣ Execute o dashboard
+
+```bash
+streamlit run dashboard_proges.py
+```
+
+### 4️⃣ Acesse no navegador
+
+Após executar o comando acima, o terminal exibirá um link como:
+```
+Local URL: http://localhost:8501
+```
+Abra esse endereço no navegador para visualizar o painel.
+
+---
+
+## 🧠 Funcionalidades Principais
+
+### 🔹 1. **Visão Geral**
+- Exibe indicadores globais: total de alunos, cursos, campi e bolsistas.
+- Gráfico de pizza mostrando a distribuição de alunos por campus.
+
+### 🔹 2. **Perfil do Aluno**
+- Distribuição por tipo de deficiência e raça.
+- Ranking dos cursos com mais alunos PcD.
+
+### 🔹 3. **Desempenho Acadêmico**
+- Gráfico de status acadêmico (ativos, trancados, etc.).
+- Lista de alunos em situação de alerta (com reprovações).
+
+### 🔹 4. **Gestão de Recursos**
+- Tabela comparando **número de alunos PcD por campus** com **quantidade de bolsistas**.
+- Indicador de alunos com deficiência auditiva por campus.
+
+---
+
+## 🧹 Limpeza e Padronização dos Dados
+
+Durante o carregamento, o sistema:
+- Unifica dados de **calouros** e **veteranos**.
+- Cria a coluna **Fonte** (Calouro/Veterano).
+- Corrige e padroniza os campos de **raça**, **deficiência**, **status acadêmico**, **curso**, **campus** e **instituto**.
+- Converte valores numéricos (reprovações, médias, etc.).
+- Trata valores ausentes de forma segura.
+
+---
+
+## 🧾 Estrutura Esperada dos Arquivos CSV
+
+### `veteranos.csv` e `calouros.csv`
+Devem conter, pelo menos, as seguintes colunas:
+| Nome | Curso | Campus | Instituto | Deficiência | Status acadêmico | Raça | Tipo de escola do Ensino Médio | Rep.Falta | Rep.Média | Alunos que recebem auxílio |
+
+### `bolsistas.csv`
+Estrutura de 3 colunas:
+| nome_ou_campus | vinculado | nao_mais_vinculado |
+
+> ⚠️ O sistema identifica automaticamente os campus e conta os bolsistas ativos (coluna “vinculado” marcada com “X”).
+
+---
+
+## 📁 Filtros Interativos
+
+Na barra lateral do Streamlit, o usuário pode filtrar os dados por:
+- **Campus**
+- **Curso**
+- **Tipo de deficiência**
+
+Esses filtros afetam dinamicamente os gráficos e métricas das abas “Visão Geral”, “Perfil do Aluno” e “Desempenho Acadêmico”.
+
+---
+
+## 📈 Exemplo de Visualizações
+
+- **Gráfico de Pizza** — distribuição de alunos por campus.  
+- **Gráficos de Barras** — tipo de deficiência, raça e cursos.  
+- **Tabelas Dinâmicas** — alunos em alerta e distribuição de recursos.
+
+---
+
+## 👨‍💻 Autor
+
+**Desenvolvido por:** Equipe PROGES  
+**Ferramenta:** [Streamlit](https://streamlit.io)  
+**Contato:** suporte@proges.edu.br *(ou seu email institucional)*
+
+---
+
+## 🪪 Licença
+
+Este projeto é distribuído sob a licença **MIT**.  
+Sinta-se livre para utilizar e modificar, desde que cite a fonte original.
+
+---
+
+## 🧭 Sugestões Futuras
+
+- Integração com banco de dados (PostgreSQL ou SQLite).  
+- Exportação de relatórios em PDF/Excel.  
+- Filtros avançados por período, sexo ou renda.  
+- Painéis comparativos entre anos ou campi.
