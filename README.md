@@ -51,16 +51,6 @@ pip install streamlit pandas numpy plotly
 streamlit run dashboard_proges.py
 ```
 
-### 4️⃣ Acesse no navegador
-
-Após executar o comando acima, o terminal exibirá um link como:
-```
-Local URL: http://localhost:8501
-```
-Abra esse endereço no navegador para visualizar o painel.
-
----
-
 ## 🧠 Funcionalidades Principais
 
 ### 🔹 1. **Visão Geral**
@@ -122,27 +112,3 @@ Esses filtros afetam dinamicamente os gráficos e métricas das abas “Visão G
 - **Gráfico de Pizza** — distribuição de alunos por campus.  
 - **Gráficos de Barras** — tipo de deficiência, raça e cursos.  
 - **Tabelas Dinâmicas** — alunos em alerta e distribuição de recursos.
-
----
-
-## 👨‍💻 Autor
-
-**Desenvolvido por:** Equipe PROGES  
-**Ferramenta:** [Streamlit](https://streamlit.io)  
-**Contato:** suporte@proges.edu.br *(ou seu email institucional)*
-
----
-
-## 🪪 Licença
-
-Este projeto é distribuído sob a licença **MIT**.  
-Sinta-se livre para utilizar e modificar, desde que cite a fonte original.
-
----
-
-## 🧭 Sugestões Futuras
-
-- Integração com banco de dados (PostgreSQL ou SQLite).  
-- Exportação de relatórios em PDF/Excel.  
-- Filtros avançados por período, sexo ou renda.  
-- Painéis comparativos entre anos ou campi.
