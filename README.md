@@ -45,7 +45,14 @@ pip install streamlit pandas numpy plotly
 - `veteranos.csv`
 - `bolsistas.csv`
 
-### 3️⃣ Execute o dashboard
+### 3️⃣ Navegue até a pasta onde o projeto está localizado
+
+```bash
+# Navegue até a pasta que você acabou de baixar/clonar
+cd nome-da-pasta/PIAPE
+```
+
+### 4️⃣ Execute o dashboard
 
 ```bash
 streamlit run dashboard_proges.py
