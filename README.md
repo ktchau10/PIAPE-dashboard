@@ -78,35 +78,10 @@ streamlit run dashboard_proges.py
 
 ---
 
-## 🧹 Limpeza e Padronização dos Dados
-
-Durante o carregamento, o sistema:
-- Unifica dados de **calouros** e **veteranos**.
-- Cria a coluna **Fonte** (Calouro/Veterano).
-- Corrige e padroniza os campos de **raça**, **deficiência**, **status acadêmico**, **curso**, **campus** e **instituto**.
-- Converte valores numéricos (reprovações, médias, etc.).
-- Trata valores ausentes de forma segura.
-
----
-
-## 🧾 Estrutura Esperada dos Arquivos CSV
-
-### `veteranos.csv` e `calouros.csv`
-Devem conter, pelo menos, as seguintes colunas:
-| Nome | Curso | Campus | Instituto | Deficiência | Status acadêmico | Raça | Tipo de escola do Ensino Médio | Rep.Falta | Rep.Média | Alunos que recebem auxílio |
-
-### `bolsistas.csv`
-Estrutura de 3 colunas:
-| nome_ou_campus | vinculado | nao_mais_vinculado |
-
-> ⚠️ O sistema identifica automaticamente os campus e conta os bolsistas ativos (coluna “vinculado” marcada com “X”).
-
----
-
 ## 📁 Filtros Interativos
 
 Na barra lateral do Streamlit, o usuário pode filtrar os dados por:
-- **Campus**
+- **Unidade Acadêmica**
 - **Curso**
 - **Tipo de deficiência**
 
